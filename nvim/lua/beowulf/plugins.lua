@@ -32,7 +32,6 @@ packer.startup(function(use)
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   }
   use 'nvim-tree/nvim-web-devicons' -- File icons
-  use 'nvim-tree/nvim-tree.lua'     -- File explorer
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-file-browser.nvim'
   use 'windwp/nvim-autopairs'

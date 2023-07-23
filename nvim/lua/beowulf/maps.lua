@@ -32,3 +32,18 @@ keymap.set('n', '<C-w><left>', '<C-w><')
 keymap.set('n', '<C-w><right>', '<C-w>>')
 keymap.set('n', '<C-w><up>', '<C-w>+')
 keymap.set('n', '<C-w><down>', '<C-w>-')
+
+-- Keep center when up-down
+keymap.set('n', 'j', 'jzz')
+keymap.set('n', 'k', 'kzz')
+
+-- Move lines and group lines left, right
+keymap.set('v', '>', '>gv')
+keymap.set('v', '<', '<gv')
+
+-- Move lines and group lines up, down
+keymap.set('n', 'K', ':m .-2<cr>')
+keymap.set('n', 'J', ':m .+1<cr>')
+
+keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
