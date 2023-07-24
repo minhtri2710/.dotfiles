@@ -18,21 +18,35 @@ require("lazy").setup({
       'tjdevries/colorbuddy.nvim'
     }
   },
+  {
+    'hrsh7th/nvim-cmp', -- Completion
+    dependencies = {
+      'L3MON4D3/LuaSnip',
+      'saadparwaiz1/cmp_luasnip',    -- LuaSnip
+      'hrsh7th/cmp-nvim-lsp',        -- Nvim-Cmp Source for Neovim's built-in LSP
+      'hrsh7th/cmp-buffer',          -- Nvim-Cmp Source for Buffers Words
+      'rafamadriz/friendly-snippets' -- Friendly Snippets
+    }
+  },
   'nvim-lualine/lualine.nvim', -- StatusLine
-  'saadparwaiz1/cmp_luasnip', -- LuaSnip
-  'nvim-lua/plenary.nvim', -- Common Utilities
-  'rafamadriz/friendly-snippets', -- Friendly Snippets
-  'onsails/lspkind-nvim', -- VSCode-Like Pictograms
-  'hrsh7th/cmp-buffer', -- Nvim-Cmp Source for Buffers Words
-  'hrsh7th/cmp-nvim-lsp', -- Nvim-Cmp Source for Neovim's built-in LSP
-  'hrsh7th/nvim-cmp', -- Completion
-  'neovim/nvim-lspconfig', -- LSP
+  'nvim-lua/plenary.nvim',     -- Common Utilities
+  'onsails/lspkind-nvim',      -- VSCode-Like Pictograms
+  {
+    'neovim/nvim-lspconfig',   -- LSP
+    dependencies = {
+      {
+        'williamboman/mason.nvim',
+        config = true
+      },
+      'williamboman/mason-lspconfig.nvim'
+    }
+  },
   'jose-elias-alvarez/null-ls.nvim', -- Use Neovim as a language server to inject LSP diagnostics, code actions and more via Lua
-  'williamboman/mason.nvim',
-  'williamboman/mason-lspconfig.nvim',
-  'glepnir/lspsaga.nvim', -- LSP UIs
-  'L3MON4D3/LuaSnip',
-  'nvim-tree/nvim-web-devicons', -- File Icons
+  'glepnir/lspsaga.nvim',            -- LSP UIs
+  {
+    'nvim-tree/nvim-web-devicons',   -- File Icons
+    lazy = true
+  },
   'nvim-telescope/telescope.nvim',
   'nvim-telescope/telescope-file-browser.nvim',
   'windwp/nvim-autopairs',
@@ -51,10 +65,10 @@ require("lazy").setup({
   'MunifTanjim/prettier.nvim',
   {
     'nvim-treesitter/nvim-treesitter',
-    build = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+    build = function() require('nvim-treesitter.install').update({ with_sync = true }) end
   },
   {
     "iamcco/markdown-preview.nvim",
-    build = function() vim.fn["mkdp#util#install"]() end,
+    build = function() vim.fn["mkdp#util#install"]() end
   }
 })
