@@ -65,7 +65,17 @@ require("lazy").setup({
   'MunifTanjim/prettier.nvim',
   {
     'nvim-treesitter/nvim-treesitter',
-    build = function() require('nvim-treesitter.install').update({ with_sync = true }) end
+    version = false,
+    build = ":TSUpdate",
+    event = { "BufReadPost", "BufNewFile" },
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter-textobjects"
+    },
+    cmd = { "TSUpdateSync" },
+    keys = {
+      { "<c-space>", desc = "Increment selection" },
+      { "<bs>",      desc = "Decrement selection", mode = "x" },
+    }
   },
   {
     "iamcco/markdown-preview.nvim",
