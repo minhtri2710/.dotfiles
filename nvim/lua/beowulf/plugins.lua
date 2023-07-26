@@ -69,9 +69,9 @@ require("lazy").setup({
     build = ":TSUpdate",
     event = { "BufReadPost", "BufNewFile" },
     dependencies = {
-      "nvim-treesitter/nvim-treesitter-textobjects"
+      "nvim-treesitter/nvim-treesitter-textobjects",
     },
-    cmd = { "TSUpdateSync" },
+    cmd = "TSUpdateSync",
     keys = {
       { "<c-space>", desc = "Increment selection" },
       { "<bs>",      desc = "Decrement selection", mode = "x" },
@@ -80,5 +80,20 @@ require("lazy").setup({
   {
     "iamcco/markdown-preview.nvim",
     build = function() vim.fn["mkdp#util#install"]() end
-  }
+  },
+  -- Indent guides for Neovim
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    event = { "BufReadPost", "BufNewFile" },
+    opts = {
+      char = "│",
+      show_trailing_blankline_indent = false,
+      show_current_context = false,
+    },
+  },
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+  "nvim-treesitter/playground",
 })

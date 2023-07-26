@@ -47,3 +47,6 @@ keymap.set('n', 'J', ':m .+1<cr>')
 
 keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+
+-- Remove highlight searched
+keymap.set('n', '<ecs>', ':noh<CR>')
