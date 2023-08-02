@@ -1,8 +1,13 @@
 local status, ts = pcall(require, "nvim-treesitter.configs")
 if (not status) then return end
 
+if (vim.fn.has "win32") then
+  local tsi = require 'nvim-treesitter.install'
+  tsi.prefer_git = false
+  tsi.compilers = { "clang", "gcc" }
+end
 ---@type TSConfig
-otps = {
+local otps = {
   highlight = {
     enable = true,
   },
@@ -11,17 +16,22 @@ otps = {
   },
   ensure_installed = {
     "tsx",
+    "typescript",
     "toml",
     "php",
+    "html",
     "json",
     "yaml",
     "css",
-    "html",
     "luap",
     "luadoc",
     "regex",
     "markdown",
     "markdown_inline",
+  },
+  auto_install = fasle,
+  context_commentstring = {
+    enable = true
   },
   autotag = {
     enable = true,
@@ -36,21 +46,6 @@ otps = {
     }
   }
 }
-
----@param opts TsConfig
-config = function(_, opts)
-  if type(opts.ensure_installed) == "table" then
-    ---@type table<string, boolean>
-    local added = {}
-    opts.ensure_installed = vim.tbl_filter(function(lang)
-      if added(lang) then
-        return false
-      end
-      added[lang] = true
-      return true
-    end, opts.ensure_installed)
-  end
-end
 
 ts.setup(otps)
 
