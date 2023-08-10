@@ -13,6 +13,36 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   {
+    'VonHeikemen/lsp-zero.nvim',
+    dependencies = {
+      -- LSP
+      'neovim/nvim-lspconfig',
+      {
+        'williamboman/mason.nvim',
+        build = function()
+          pcall(vim.api.nvim_command, 'MasonUpdate')
+        end,
+      },
+      'williamboman/mason-lspconfig.nvim',
+      'williamboman/nvim-lsp-installer',
+      -- Completion
+      {
+        'hrsh7th/nvim-cmp',
+        event = "InsertEnter",
+        dependencies = {
+          'hrsh7th/cmp-buffer',
+          'hrsh7th/cmp-path',
+          'hrsh7th/cmp-nvim-lsp',
+          'hrsh7th/cmp-nvim-lua',
+        }
+      },
+      'saadparwaiz1/cmp_luasnip',
+      -- Snippets
+      { 'L3MON4D3/LuaSnip' },
+      { 'rafamadriz/friendly-snippets' },
+    }
+  },
+  {
     'svrana/neosolarized.nvim',
     dependencies = {
       'tjdevries/colorbuddy.nvim'
@@ -34,31 +64,6 @@ require('lazy').setup({
       'nvim-treesitter/nvim-treesitter'
     }
   },
-  -- LSP
-  'neovim/nvim-lspconfig',
-  {
-    'williamboman/mason.nvim',
-    build = function()
-      pcall(vim.api.nvim_command, 'MasonUpdate')
-    end,
-  },
-  'williamboman/mason-lspconfig.nvim',
-  -- Completion
-  {
-    'hrsh7th/nvim-cmp',
-    event = "InsertEnter",
-    dependencies = {
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-path',
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-nvim-lua',
-    }
-  },
-  'saadparwaiz1/cmp_luasnip',
-  -- Snippets
-  'L3MON4D3/LuaSnip',
-  'rafamadriz/friendly-snippets',
-  'glepnir/lspsaga.nvim',
   'nvim-lualine/lualine.nvim',       -- StatusLine
   'onsails/lspkind-nvim',            -- VSCode-Like Pictograms
   'jose-elias-alvarez/null-ls.nvim', -- Use Neovim as a language server to inject LSP diagnostics, code actions and more via Lua

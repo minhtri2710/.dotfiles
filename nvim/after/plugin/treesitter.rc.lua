@@ -2,9 +2,7 @@ local status, ts = pcall(require, "nvim-treesitter.configs")
 if (not status) then return end
 
 if (vim.fn.has "win32") then
-  local tsi = require 'nvim-treesitter.install'
-  tsi.prefer_git = false
-  tsi.compilers = { "clang", "gcc" }
+  require 'nvim-treesitter.install'.compilers = { "clang", "gcc" }
 end
 ---@type TSConfig
 local otps = {
@@ -27,7 +25,7 @@ local otps = {
     "luadoc",
     "regex",
     "markdown",
-    "markdown_inline",
+    "markdown_inline"
   },
   auto_install = fasle,
   context_commentstring = {
