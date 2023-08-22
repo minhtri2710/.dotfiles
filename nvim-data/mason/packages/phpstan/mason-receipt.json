@@ -1,0 +1,1 @@
+{"name":"phpstan","primary_source":{"id":"pkg:github\/phpstan\/phpstan@1.10.28","type":"registry+v1"},"metrics":{"completion_time":1691592101127,"start_time":1691592095170},"links":{"opt":{},"share":{},"bin":{"phpstan.cmd":"phpstan.cmd"}},"schema_version":"1.1","secondary_sources":[]}

@@ -1,0 +1,1 @@
+{"primary_source":{"id":"pkg:npm\/ts-standard@12.0.2","type":"registry+v1"},"metrics":{"start_time":1691322007381,"completion_time":1691322024527},"links":{"opt":{},"share":{},"bin":{"ts-standard.cmd":"node_modules\\.bin\\ts-standard.cmd"}},"name":"ts-standard","secondary_sources":[],"schema_version":"1.1"}

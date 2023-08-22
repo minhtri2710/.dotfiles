@@ -1,0 +1,1 @@
+{"name":"tree-sitter-cli","primary_source":{"id":"pkg:github\/tree-sitter\/tree-sitter@v0.20.8","type":"registry+v1"},"metrics":{"completion_time":1691592127288,"start_time":1691592123691},"links":{"opt":{},"share":{},"bin":{"tree-sitter.cmd":"tree-sitter-windows-x64.exe"}},"schema_version":"1.1","secondary_sources":[]}

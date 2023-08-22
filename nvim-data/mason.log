@@ -1,0 +1,106 @@
+[ERROR 8/6/2023 3:00:05 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"typescript-language-server\"".
+[ERROR 8/6/2023 3:00:05 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"lua-language-server\"".
+[ERROR 8/6/2023 3:00:05 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"tailwindcss-language-server\"".
+[ERROR 8/6/2023 3:00:05 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"css-lsp\"".
+[ERROR 8/6/2023 3:00:05 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"astro-language-server\"".
+[ERROR 8/6/2023 5:56:33 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"typescript-language-server\"".
+[ERROR 8/6/2023 5:56:33 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"lua-language-server\"".
+[ERROR 8/6/2023 5:56:33 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"tailwindcss-language-server\"".
+[ERROR 8/6/2023 5:56:33 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"css-lsp\"".
+[ERROR 8/6/2023 5:56:33 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"astro-language-server\"".
+[ERROR 8/6/2023 6:14:42 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"typescript-language-server\"".
+[ERROR 8/6/2023 6:14:42 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"lua-language-server\"".
+[ERROR 8/6/2023 6:14:42 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"tailwindcss-language-server\"".
+[ERROR 8/6/2023 6:14:42 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"css-lsp\"".
+[ERROR 8/6/2023 6:14:42 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"astro-language-server\"".
+[ERROR 8/6/2023 6:32:07 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"typescript-language-server\"".
+[ERROR 8/6/2023 6:32:07 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"lua-language-server\"".
+[ERROR 8/6/2023 6:32:07 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"tailwindcss-language-server\"".
+[ERROR 8/6/2023 6:32:07 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"css-lsp\"".
+[ERROR 8/6/2023 6:32:07 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"astro-language-server\"".
+[ERROR 8/6/2023 6:32:14 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"typescript-language-server\"".
+[ERROR 8/6/2023 6:32:14 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"lua-language-server\"".
+[ERROR 8/6/2023 6:32:14 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"tailwindcss-language-server\"".
+[ERROR 8/6/2023 6:32:14 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"css-lsp\"".
+[ERROR 8/6/2023 6:32:14 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"astro-language-server\"".
+[ERROR 8/6/2023 6:32:18 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"typescript-language-server\"".
+[ERROR 8/6/2023 6:32:18 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"lua-language-server\"".
+[ERROR 8/6/2023 6:32:18 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"tailwindcss-language-server\"".
+[ERROR 8/6/2023 6:32:18 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"css-lsp\"".
+[ERROR 8/6/2023 6:32:18 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"astro-language-server\"".
+[ERROR 8/6/2023 6:33:24 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"typescript-language-server\"".
+[ERROR 8/6/2023 6:33:24 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"lua-language-server\"".
+[ERROR 8/6/2023 6:33:24 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"tailwindcss-language-server\"".
+[ERROR 8/6/2023 6:33:24 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"css-lsp\"".
+[ERROR 8/6/2023 6:33:24 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"astro-language-server\"".
+[ERROR 8/6/2023 6:33:33 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"typescript-language-server\"".
+[ERROR 8/6/2023 6:33:33 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"lua-language-server\"".
+[ERROR 8/6/2023 6:33:33 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"tailwindcss-language-server\"".
+[ERROR 8/6/2023 6:33:33 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"css-lsp\"".
+[ERROR 8/6/2023 6:33:33 PM] ...al/nvim-data/lazy/mason.nvim/lua/mason-registry/init.lua:79: Cannot find package "\"astro-language-server\"".
+[INFO  8/6/2023 6:34:15 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=emmet-ls) {}
+[INFO  8/6/2023 6:34:25 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=emmet-ls)
+[INFO  8/6/2023 6:34:29 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=astro-language-server) {}
+[INFO  8/6/2023 6:34:35 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=bash-language-server) {}
+[INFO  8/6/2023 6:34:40 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=bicep-lsp) {}
+[INFO  8/6/2023 6:34:42 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=astro-language-server)
+[INFO  8/6/2023 6:34:42 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=bash-language-server)
+[INFO  8/6/2023 6:34:47 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=bicep-lsp)
+[INFO  8/6/2023 6:36:11 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=css-lsp) {}
+[INFO  8/6/2023 6:36:19 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=css-lsp)
+[INFO  8/6/2023 6:36:53 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=erlang-ls) {}
+[ERROR 8/6/2023 6:36:58 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=erlang-ls) error=spawn: pwsh failed with exit code 1 and signal 0. 
+[INFO  8/6/2023 6:37:01 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=eslint-lsp) {}
+[INFO  8/6/2023 6:37:08 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=eslint-lsp)
+[INFO  8/6/2023 6:37:31 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=json-lsp) {}
+[INFO  8/6/2023 6:37:39 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=json-lsp)
+[INFO  8/6/2023 6:37:47 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=lua-language-server) {}
+[INFO  8/6/2023 6:37:53 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=lua-language-server)
+[INFO  8/6/2023 6:38:15 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=rust-analyzer) {}
+[INFO  8/6/2023 6:38:19 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=rust-analyzer)
+[INFO  8/6/2023 6:38:27 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=svelte-language-server) {}
+[INFO  8/6/2023 6:38:28 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=tailwindcss-language-server) {}
+[INFO  8/6/2023 6:38:34 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=typescript-language-server) {}
+[INFO  8/6/2023 6:38:34 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=tailwindcss-language-server)
+[INFO  8/6/2023 6:38:39 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=vue-language-server) {}
+[INFO  8/6/2023 6:38:40 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=typescript-language-server)
+[INFO  8/6/2023 6:38:42 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=yaml-language-server) {}
+[INFO  8/6/2023 6:38:42 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=svelte-language-server)
+[INFO  8/6/2023 6:38:49 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=yaml-language-server)
+[INFO  8/6/2023 6:38:54 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=vue-language-server)
+[INFO  8/6/2023 6:39:44 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=eslint_d) {}
+[INFO  8/6/2023 6:39:55 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=eslint_d)
+[INFO  8/6/2023 6:40:07 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=ts-standard) {}
+[INFO  8/6/2023 6:40:24 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=ts-standard)
+[INFO  8/6/2023 6:41:13 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=prettier) {}
+[INFO  8/6/2023 6:41:17 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=prettier)
+[INFO  8/6/2023 6:41:43 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=emmet-language-server) {}
+[INFO  8/6/2023 6:41:58 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=emmet-language-server)
+[INFO  8/8/2023 11:33:07 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=rust-analyzer) Package(name=rust-analyzer)
+[INFO  8/8/2023 11:33:15 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=rust-analyzer)
+[INFO  8/9/2023 9:38:55 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=html-lsp) {}
+[INFO  8/9/2023 9:39:11 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=html-lsp)
+[INFO  8/9/2023 9:40:50 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=deno) {}
+[INFO  8/9/2023 9:41:02 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=deno)
+[INFO  8/9/2023 9:41:27 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=php-cs-fixer) {}
+[INFO  8/9/2023 9:41:30 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=php-debug-adapter) {}
+[INFO  8/9/2023 9:41:31 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=php-cs-fixer)
+[INFO  8/9/2023 9:41:32 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=phpcbf) {}
+[INFO  8/9/2023 9:41:33 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=phpcs) {}
+[INFO  8/9/2023 9:41:33 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=phpcbf)
+[INFO  8/9/2023 9:41:34 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=phpmd) {}
+[INFO  8/9/2023 9:41:35 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=phpstan) {}
+[INFO  8/9/2023 9:41:35 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=phpcs)
+[INFO  8/9/2023 9:41:35 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=php-debug-adapter)
+[INFO  8/9/2023 9:41:36 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=phpactor) {}
+[ERROR 8/9/2023 9:41:36 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:249: Installation failed for Package(name=phpactor) error="The current platform is unsupported."
+[INFO  8/9/2023 9:41:36 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=phpmd)
+[INFO  8/9/2023 9:41:41 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=phpstan)
+[INFO  8/9/2023 9:41:42 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=prettierd) {}
+[INFO  8/9/2023 9:41:56 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=prettierd)
+[INFO  8/9/2023 9:42:03 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=tree-sitter-cli) {}
+[INFO  8/9/2023 9:42:07 PM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=tree-sitter-cli)
+[INFO  8/22/2023 12:06:00 AM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=clangd) {}
+[INFO  8/22/2023 12:06:14 AM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=clangd)
+[INFO  8/22/2023 8:05:35 AM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=stylua) {}
+[INFO  8/22/2023 8:05:43 AM] ...m-data/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=stylua)
