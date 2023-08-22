@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "svelte-language-server": "^0.15.16"
+    "svelte-language-server": "^0.15.17"
   }
 }
