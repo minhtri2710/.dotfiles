@@ -1,0 +1,1 @@
+{"schema_version":"1.1","primary_source":{"type":"registry+v1","id":"pkg:npm\/%40commitlint\/cli@17.7.1"},"name":"commitlint","links":{"share":{},"opt":{},"bin":{"commitlint.cmd":"node_modules\\.bin\\commitlint.cmd"}},"secondary_sources":[],"metrics":{"completion_time":1692711319130,"start_time":1692711276180}}
