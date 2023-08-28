@@ -20,6 +20,8 @@ local function formatForTailwindCSS(entry, vim_item)
   return vim_item
 end
 
+require('lsp-zero').extend_cmp()
+
 cmp.setup({
   snippet = {
     expand = function(args)

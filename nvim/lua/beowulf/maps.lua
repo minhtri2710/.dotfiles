@@ -47,3 +47,10 @@ keymap.set('v', 'J', ":m '>+1<cr>gv=gv")
 
 -- Remove highlight searched
 keymap.set('n', '<esc>', ':noh<cr><esc>')
+
+-- greatest remap ever
+vim.keymap.set("x", "<leader>p", [["_dP]])
+
+-- next greatest remap ever : asbjornHaland
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])

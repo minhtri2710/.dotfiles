@@ -1,25 +1,8 @@
 local status, lsp = pcall(require, 'lsp-zero')
 if (not status) then return end
 
-lsp.preset('recommend')
-
 local status2, cmp = pcall(require, 'cmp')
 if (not status2) then return end
-
-local cmp_select = { behavior = cmp.SelectBehavior.Select }
-local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<CR>'] = cmp.mapping.confirm({ select = false }),
-  ['<C-Space>'] = cmp.mapping.complete(),
-})
-
-cmp_mappings['<Tab>'] = nil
-cmp_mappings['<S-Tab>'] = nil
-
-lsp.setup_nvim_cmp({
-  mapping = cmp_mappings
-})
 
 lsp.set_sign_icons({
   error = '✘',

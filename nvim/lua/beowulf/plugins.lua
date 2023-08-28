@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   {
     'VonHeikemen/lsp-zero.nvim',
+    branch = 'dev-v3',
     dependencies = {
       -- LSP
       'neovim/nvim-lspconfig',
@@ -24,7 +25,6 @@ require('lazy').setup({
         end,
       },
       'williamboman/mason-lspconfig.nvim',
-      'williamboman/nvim-lsp-installer',
       -- Completion
       {
         'hrsh7th/nvim-cmp',
