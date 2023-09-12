@@ -22,6 +22,7 @@ vim.opt.shellxquote = ''
 vim.opt.backupskip = { '/tmp/*', '/private/tmp/*' }
 vim.opt.inccommand = 'split'
 vim.opt.ignorecase = true -- Case insensitive searching UNLESS /C or capital in search
+vim.opt.smartcase = true  -- If you include mixed case in your search, assumes you want case-sentitive
 vim.opt.smarttab = true
 vim.opt.breakindent = true
 vim.opt.shiftwidth = 2

@@ -11,6 +11,7 @@ local fb_actions = require "telescope".extensions.file_browser.actions
 
 telescope.setup {
   defaults = {
+    path_display = { "truncate " },
     mappings = {
       n = {
         ["q"] = actions.close

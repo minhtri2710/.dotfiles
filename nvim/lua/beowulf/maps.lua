@@ -46,7 +46,7 @@ keymap.set('v', 'K', ":m '<-2<cr>gv=gv")
 keymap.set('v', 'J', ":m '>+1<cr>gv=gv")
 
 -- Remove highlight searched
-keymap.set('n', '<esc>', ':noh<cr><esc>')
+keymap.set('n', '<esc>', ':nohl<cr>')
 
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])

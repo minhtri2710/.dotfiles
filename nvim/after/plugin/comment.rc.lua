@@ -11,7 +11,7 @@ comment.setup {
       local type = ctx.ctype == U.ctype.linewise and '__default' or '__multiline'
 
       -- Determine the location where to calculate commentstring from
-      local location = nil
+      local location = {}
       if ctx.ctype == U.ctype.blockwise then
         location = require('ts_context_commentstring.utils').get_cursor_location()
       elseif ctx.cmotion == U.cmotion.v or ctx.cmotion == U.cmotion.V then

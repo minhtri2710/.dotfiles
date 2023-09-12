@@ -1,6 +1,12 @@
-local status, cmp = pcall(require, "cmp")
+local status, lsp_zero = pcall(require, "lsp-zero")
 if (not status) then return end
-local lspkind = require 'lspkind'
+lsp_zero.extend_cmp()
+
+local status2, cmp = pcall(require, "cmp")
+if (not status2) then return end
+
+local lspkind = require('lspkind')
+local cmp_action = lsp_zero.cmp_action()
 
 local function formatForTailwindCSS(entry, vim_item)
   if vim_item.kind == 'Color' and entry.completion_item.documentation then
@@ -20,7 +26,6 @@ local function formatForTailwindCSS(entry, vim_item)
   return vim_item
 end
 
-require('lsp-zero').extend_cmp()
 
 cmp.setup({
   snippet = {
@@ -29,14 +34,16 @@ cmp.setup({
     end,
   },
   mapping = cmp.mapping.preset.insert({
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-d>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.close(),
     ['<CR>'] = cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Replace,
       select = true
     }),
+    ['<C-f>'] = cmp_action.luasnip_jump_forward(),
+    ['<C-b>'] = cmp_action.luasnip_jump_backward(),
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },

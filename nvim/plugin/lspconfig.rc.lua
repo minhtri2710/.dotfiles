@@ -2,6 +2,7 @@ local status, nvim_lsp = pcall(require, "lspconfig")
 if (not status) then return end
 
 local protocol = require('vim.lsp.protocol')
+local lsp_zero = require('lsp-zero')
 
 local augroup_format = vim.api.nvim_create_augroup("Format", { clear = true })
 local enable_format_on_save = function(_, bufnr)
@@ -18,20 +19,15 @@ end
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+  local opts = { buffer = bufnr, remap = false }
+  lsp_zero.default_keymaps(opts)
 
-  --Enable completion triggered by <c-x><c-o>
-  --local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-  --buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-  -- Mappings.
-  local opts = { noremap = true, silent = true }
-
-  -- See `:help vim.lsp.*` for documentation on any of the below functions
-  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  --buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  --buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  vim.keymap.set("n", "<leader>ws", function() vim.lsp.buf.workspace_symbol() end, opts)
+  vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
+  vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, opts)
+  vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
+  vim.keymap.set("n", "<leader>fm", function() vim.lsp.buf.format() end, opts)
+  vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end
 
 protocol.CompletionItemKind = {
@@ -67,12 +63,17 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
+  capabilities = capabilities,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-  cmd = { "typescript-language-server", "--stdio" },
+  cmd = { "typescript-language-server", "--stdio" }
+}
+
+nvim_lsp.rust_analyzer.setup {
+  on_attach = on_attach,
   capabilities = capabilities
 }
 
-nvim_lsp.lua_ls.setup {
+local lua_opts = lsp_zero.nvim_lua_ls({
   capabilities = capabilities,
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)
@@ -92,7 +93,8 @@ nvim_lsp.lua_ls.setup {
       },
     },
   },
-}
+})
+nvim_lsp.lua_ls.setup(lua_opts)
 
 nvim_lsp.tailwindcss.setup {
   on_attach = on_attach,
