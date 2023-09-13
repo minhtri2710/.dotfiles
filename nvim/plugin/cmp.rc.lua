@@ -7,6 +7,8 @@ if (not status2) then return end
 local lspkind = require('lspkind')
 local cmp_action = lsp_zero.cmp_action()
 
+require('luasnip.loaders.from_vscode').lazy_load()
+
 local function formatForTailwindCSS(entry, vim_item)
   if vim_item.kind == 'Color' and entry.completion_item.documentation then
     local _, _, r, g, b = string.find(entry.completion_item.documentation, '^rgb%((%d+), (%d+), (%d+)')
@@ -24,7 +26,6 @@ local function formatForTailwindCSS(entry, vim_item)
   vim_item.kind = lspkind.symbolic(vim_item.kind) and lspkind.symbolic(vim_item.kind) or vim_item.kind
   return vim_item
 end
-
 
 cmp.setup({
   sources = cmp.config.sources({
@@ -45,8 +46,11 @@ cmp.setup({
     }),
     ['<C-f>'] = cmp_action.luasnip_jump_forward(),
     ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+    ['<Tab>'] = cmp_action.luasnip_supertab(),
+    ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
   }),
   formatting = {
+    fields = { 'abbr', 'kind', 'menu' },
     format = lspkind.cmp_format({
       maxwidth = 50,
       before = function(entry, vim_item)
@@ -54,10 +58,9 @@ cmp.setup({
         return vim_item
       end
     })
+  },
+  preselect = 'item',
+  completion = {
+    completeopt = 'menu, menuone, noinsert, noselect'
   }
 })
-
-vim.cmd [[
-  set completeopt=menuone,noinsert,noselect
-  highlight! default link CmpItemKind CmpItemMenuDefault
-]]
