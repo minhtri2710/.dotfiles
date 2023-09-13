@@ -1,8 +1,7 @@
-local status, lsp_zero = pcall(require, "lsp-zero")
-if (not status) then return end
-lsp_zero.extend_cmp()
 local status2, cmp = pcall(require, "cmp")
 if (not status2) then return end
+local status, lsp_zero = pcall(require, "lsp-zero")
+if (not status) then return end
 
 local lspkind = require('lspkind')
 local cmp_action = lsp_zero.cmp_action()

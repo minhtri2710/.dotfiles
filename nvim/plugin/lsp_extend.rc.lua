@@ -1,6 +1,5 @@
 local status, lsp_zero = pcall(require, "lsp-zero")
 if (not status) then return end
-lsp_zero.extend_lspconfig()
 local status2, nvim_lsp = pcall(require, "lspconfig")
 if (not status2) then return end
 
