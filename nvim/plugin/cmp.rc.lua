@@ -1,7 +1,6 @@
 local status, lsp_zero = pcall(require, "lsp-zero")
 if (not status) then return end
 lsp_zero.extend_cmp()
-
 local status2, cmp = pcall(require, "cmp")
 if (not status2) then return end
 
@@ -28,11 +27,13 @@ end
 
 
 cmp.setup({
-  snippet = {
-    expand = function(args)
-      require('luasnip').lsp_expand(args.body)
-    end,
-  },
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'buffer' },
+    { name = 'luasnip' },
+    { name = 'path' },
+    { name = 'nvim_lua' },
+  }),
   mapping = cmp.mapping.preset.insert({
     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
     ['<C-d>'] = cmp.mapping.scroll_docs(4),
@@ -44,10 +45,6 @@ cmp.setup({
     }),
     ['<C-f>'] = cmp_action.luasnip_jump_forward(),
     ['<C-b>'] = cmp_action.luasnip_jump_backward(),
-  }),
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'buffer' },
   }),
   formatting = {
     format = lspkind.cmp_format({

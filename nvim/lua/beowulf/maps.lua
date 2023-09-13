@@ -36,6 +36,12 @@ keymap.set('n', '<C-w><down>', '<C-w>-')
 -- Keep center when up-down
 keymap.set('n', 'j', 'jzz')
 keymap.set('n', 'k', 'kzz')
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-u>", "<C-u>zz")
+keymap.set("n", "n", "nzzzv")
+keymap.set("n", "N", "Nzzzv")
+
+keymap.set("n", "J", "mzJ`z")
 
 -- Move lines and group lines left, right
 keymap.set('v', '>', '>gv')
@@ -49,8 +55,14 @@ keymap.set('v', 'J', ":m '>+1<cr>gv=gv")
 keymap.set('n', '<esc>', ':nohl<cr>')
 
 -- greatest remap ever
-vim.keymap.set("x", "<leader>p", [["_dP]])
+keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
+keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+keymap.set("n", "<leader>Y", [["+Y]])
+
+keymap.set(
+    {"n", "x"},
+    "<leader>rr",
+    function() require('refactoring').select_refactor() end
+)

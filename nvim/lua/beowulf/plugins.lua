@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   {
     "VonHeikemen/lsp-zero.nvim",
-    branch = "dev-v3",
+    branch = "v3.x",
     lazy = true,
     config = false,
     dependencies = {
@@ -40,8 +40,12 @@ require("lazy").setup({
       },
       "saadparwaiz1/cmp_luasnip",
       -- Snippets
-      { "L3MON4D3/LuaSnip" },
-      { "rafamadriz/friendly-snippets" },
+      {
+        "L3MON4D3/LuaSnip",
+        dependencies = {
+          "rafamadriz/friendly-snippets"
+        }
+      },
     },
   },
   {
@@ -58,7 +62,7 @@ require("lazy").setup({
     keys = {
       { "<c-space>", desc = "Increment selection" },
       { "<bs>",      desc = "Decrement selection", mode = "x" },
-    },
+    }
   },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
@@ -157,5 +161,26 @@ require("lazy").setup({
     "stevearc/dressing.nvim",
     event = "VeryLazy",
   },
-  "inkarkat/vim-ReplaceWithRegister"
+  {
+    "ThePrimeagen/refactoring.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("refactoring").setup()
+    end,
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("treesitter-context").setup {
+        max_lines = 1,
+      }
+    end
+  },
+  "theprimeagen/harpoon"
 })

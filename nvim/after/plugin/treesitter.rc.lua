@@ -27,7 +27,7 @@ local otps = {
     "markdown",
     "markdown_inline"
   },
-  auto_install = fasle,
+  auto_install = true,
   context_commentstring = {
     enable = true
   },
