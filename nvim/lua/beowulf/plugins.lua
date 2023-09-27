@@ -48,11 +48,12 @@ require("lazy").setup({
       },
     },
   },
+  -- Colorscheme
   {
-    "svrana/neosolarized.nvim",
-    dependencies = {
-      "tjdevries/colorbuddy.nvim",
-    },
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
   },
   {
     "nvim-treesitter/nvim-treesitter",
@@ -148,6 +149,9 @@ require("lazy").setup({
   {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      vim.keymap.set("n", "<leader>tb", ":TroubleToggle workspace_diagnostics<cr>", { silent = true, noremap = true })
+    end
   },
   {
     "kylechui/nvim-surround",
@@ -182,5 +186,6 @@ require("lazy").setup({
       }
     end
   },
-  "theprimeagen/harpoon"
+  'ThePrimeagen/harpoon',
+  'tpope/vim-fugitive'
 })

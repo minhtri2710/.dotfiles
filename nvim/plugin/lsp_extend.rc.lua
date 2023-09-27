@@ -10,20 +10,17 @@ require('mason-lspconfig').setup({
     'rust_analyzer',
     'tailwindcss',
     'cssls',
-    'astro',
-    'intelephense',
-    'denols',
     'eslint',
     'html',
+    'jsonls',
     'psalm',
-    'jsonls'
+    'intelephense',
   },
   handlers = {
     lsp_zero.default_setup,
     tsserver = function()
       nvim_lsp.tsserver.setup {
-        filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-        cmd = { "typescript-language-server", "--stdio" }
+        singlel_support_file = false,
       }
     end,
     lua_ls = function()
