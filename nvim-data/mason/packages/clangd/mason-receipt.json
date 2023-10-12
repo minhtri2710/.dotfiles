@@ -1,1 +1,0 @@
-{"metrics":{"start_time":1692637561031,"completion_time":1692637574554},"links":{"opt":{},"share":{"mason-schemas\\lsp\\clangd.json":"mason-schemas\\lsp.json"},"bin":{"clangd.cmd":"clangd_16.0.2\/bin\/clangd.exe"}},"primary_source":{"id":"pkg:github\/clangd\/clangd@16.0.2","type":"registry+v1"},"schema_version":"1.1","name":"clangd","secondary_sources":[]}

@@ -1,9 +1,6 @@
 #UTF-8
 [console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
 
-#Posh Git
-Import-Module posh-git
-
 #Terminal Icons
 Import-Module Terminal-Icons
 
@@ -18,17 +15,15 @@ Set-PSReadLineKeyHandler -Key 'Tab' -Function MenuComplete
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -PredictionViewStyle ListView
 
-#Fzf
-Import-Module PSFzf
-Set-PsFzfOption -PSRealineChordProvider 'Ctrl+f' -PSReadlineChordReverseHistory 'Ctrl+r'
-
 #Alias
 Set-Alias g git
 Set-Alias vim nvim
-Set-Alias ll ls
 Set-Alias tig 'C:\Users\tranm\scoop\apps\git\2.40.1.windows.1\usr\bin\tig.exe'
 Set-Alias less 'C:\Users\tranm\scoop\apps\git\2.40.1.windows.1\usr\bin\less.exe'
 Set-Alias grep findstr
+Set-Alias ll eza
+Set-Alias lg lazygit
+Set-Alias ':q' exit
 
 #Utilities
 function which ($command) {
@@ -46,3 +41,9 @@ Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
             [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
         }
 }
+
+# ExitFunction
+function exit {
+  Invoke-Command -ScriptBlock {exit}
+}
+

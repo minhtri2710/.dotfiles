@@ -1,1 +1,0 @@
-{"schema_version":"1.1","name":"robotframework-lsp","metrics":{"completion_time":1692722849097,"start_time":1692722821115},"links":{"bin":{"robotframework_ls.cmd":"venv\\Scripts\\robotframework_ls.exe"},"share":{},"opt":{}},"primary_source":{"id":"pkg:pypi\/robotframework-lsp@1.11.0","type":"registry+v1"},"secondary_sources":[]}

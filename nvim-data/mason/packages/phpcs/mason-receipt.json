@@ -1,1 +1,0 @@
-{"name":"phpcs","primary_source":{"id":"pkg:github\/squizlabs\/php_codesniffer@3.7.2","type":"registry+v1"},"metrics":{"completion_time":1691592095181,"start_time":1691592093546},"links":{"opt":{},"share":{},"bin":{"phpcs.cmd":"phpcs.cmd"}},"schema_version":"1.1","secondary_sources":[]}

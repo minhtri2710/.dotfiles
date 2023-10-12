@@ -139,12 +139,15 @@ require("lazy").setup({
   -- Indent guides for Neovim
   {
     "lukas-reineke/indent-blankline.nvim",
-    event = { "BufReadPost", "BufNewFile" },
+    main = "ibl",
     opts = {
       char = "│",
       show_trailing_blankline_indent = false,
       show_current_context = false,
     },
+    config = function()
+      require("ibl").setup({})
+    end
   },
   {
     "folke/trouble.nvim",
@@ -187,5 +190,15 @@ require("lazy").setup({
     end
   },
   'ThePrimeagen/harpoon',
-  'tpope/vim-fugitive'
+  'tpope/vim-fugitive',
+  {
+    'akinsho/toggleterm.nvim',
+    version = "*",
+    config = function()
+      require('toggleterm').setup {}
+      vim.keymap.set('t', '<esc>', '<C-\\><C-n><cr>')
+      vim.keymap.set('n', '<leader>t', ':ToggleTerm size=15<cr>')
+    end,
+  },
+  'mbbill/undotree',
 })

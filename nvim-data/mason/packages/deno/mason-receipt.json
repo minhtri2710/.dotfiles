@@ -1,1 +1,0 @@
-{"metrics":{"start_time":1692723105569,"completion_time":1692723157680},"primary_source":{"id":"pkg:github\/denoland\/deno@v1.36.2","type":"registry+v1"},"secondary_sources":[],"schema_version":"1.1","name":"deno","links":{"share":{"mason-schemas\\lsp\\deno.json":"mason-schemas\\lsp.json"},"opt":{},"bin":{"deno.cmd":"deno.exe"}}}

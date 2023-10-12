@@ -35,7 +35,14 @@ bufferline.setup({
     },
     modified_selected = {
       bg = '#7c6eac',
+    },
+    duplicate = {
+      bg = '#574d79',
+    },
+    duplicate_selected = {
+      bg = '#7c6eac',
     }
+
   },
 })
 
