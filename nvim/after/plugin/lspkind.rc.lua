@@ -42,6 +42,7 @@ lspkind.init({
     Struct = "󰙅",
     Event = "",
     Operator = "󰆕",
-    TypeParameter = ""
+    TypeParameter = "",
+    Codeium = ""
   },
 })

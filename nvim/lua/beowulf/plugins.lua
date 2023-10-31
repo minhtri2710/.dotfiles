@@ -212,5 +212,20 @@ require("lazy").setup({
     "danymat/neogen",
     dependencies = "nvim-treesitter/nvim-treesitter",
     config = true,
-  }
+  },
+  {
+    'codota/tabnine-nvim',
+    build = "pwsh.exe -file .\\dl_binaries.ps1"
+  },
+  {
+    "Exafunction/codeium.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+    },
+    config = function()
+      require("codeium").setup({
+      })
+    end
+  },
 })

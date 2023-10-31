@@ -33,6 +33,7 @@ cmp.setup({
     { name = 'luasnip' },
     { name = 'path' },
     { name = 'nvim_lua' },
+    { name = 'codeium' },
   }),
   mapping = cmp.mapping.preset.insert({
     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
@@ -45,12 +46,13 @@ cmp.setup({
     }),
     ['<C-f>'] = cmp_action.luasnip_jump_forward(),
     ['<C-b>'] = cmp_action.luasnip_jump_backward(),
-    ['<Tab>'] = cmp_action.luasnip_supertab(),
-    ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
+    -- ['<Tab>'] = cmp_action.luasnip_supertab(),
+    -- ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
   }),
   formatting = {
     fields = { 'abbr', 'kind', 'menu' },
     format = lspkind.cmp_format({
+      ellipsis_char = '...',
       maxwidth = 50,
       before = function(entry, vim_item)
         vim_item = formatForTailwindCSS(entry, vim_item)
