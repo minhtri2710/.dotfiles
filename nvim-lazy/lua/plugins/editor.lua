@@ -89,7 +89,7 @@ return {
         desc = "Lists open buffers",
       },
       {
-        ";t",
+        ";h",
         function()
           local builtin = require("telescope.builtin")
           builtin.help_tags()
@@ -113,12 +113,28 @@ return {
         desc = "Lists Diagnostics for all open buffers or a specific buffer",
       },
       {
-        ";s",
+        ";t",
         function()
           local builtin = require("telescope.builtin")
           builtin.treesitter()
         end,
         desc = "Lists Function names, variables, from Treesitter",
+      },
+      {
+        ";g",
+        function()
+          local builtin = require("telescope.builtin")
+          builtin.git_files()
+        end,
+        desc = "Lists git files",
+      },
+      {
+        ";s",
+        function()
+          local builtin = require("telescope.builtin")
+          builtin.grep_string({ search = vim.fn.input("Grep > ") })
+        end,
+        desc = "Grep string",
       },
       {
         "sf",
