@@ -53,14 +53,6 @@ keymap.set("n", "N", "Nzzzv")
 
 keymap.set("n", "J", "mzJ`z")
 
--- Move lines and group lines left, right
-keymap.set("v", ">", ">gv")
-keymap.set("v", "<", "<gv")
-
--- Move lines and group lines up, down
-keymap.set("v", "K", ":m '<-2<cr>gv=gv")
-keymap.set("v", "J", ":m '>+1<cr>gv=gv")
-
 keymap.set("n", "<leader>r", function()
   require("beowulf.utils").replaceHexWithHSL()
 end)

@@ -20,7 +20,7 @@ return {
         hsl_color = {
           pattern = "hsl%(%d+,? %d+,? %d+%)",
           group = function(_, match)
-            local utils = require("craftzdog.utils")
+            local utils = require("solarized-osaka.hsl")
             local h, s, l = match:match("hsl%((%d+),? (%d+),? (%d+)%)")
             h, s, l = tonumber(h), tonumber(s), tonumber(l)
             local hex_color = utils.hslToHex(h, s, l)
@@ -44,12 +44,16 @@ return {
   },
   {
     "telescope.nvim",
+    event = "VeryLazy",
     dependencies = {
       {
         "nvim-telescope/telescope-fzf-native.nvim",
         build = "make",
       },
       "nvim-telescope/telescope-file-browser.nvim",
+      "ThePrimeagen/git-worktree.nvim",
+      "nvim-telescope/telescope-ui-select.nvim",
+      "nvim-telescope/telescope-live-grep-args.nvim",
     },
     keys = {
       {
@@ -158,6 +162,31 @@ return {
         end,
         desc = "Open File Browser with the path of the current buffer",
       },
+      {
+        "<leader>gw",
+        function()
+          local telescope = require("telescope")
+
+          telescope.extensions.git_worktree.git_worktrees()
+        end,
+        desc = "List git worktree",
+      },
+      {
+        ";b",
+        function()
+          local builtin = require("telescope.builtin")
+          builtin.git_branches()
+        end,
+        desc = "List git branches",
+      },
+      {
+        "<leader>fg",
+        function()
+          local telescope = require("telescope")
+          telescope.extensions.live_grep_args.live_grep_args()
+        end,
+        desc = "Live grep with args",
+      },
     },
     config = function(_, opts)
       local telescope = require("telescope")
@@ -214,8 +243,14 @@ return {
         },
       }
       telescope.setup(opts)
-      require("telescope").load_extension("fzf")
-      require("telescope").load_extension("file_browser")
+      telescope.load_extension("fzf")
+      telescope.load_extension("file_browser")
+      telescope.load_extension("git_worktree")
+      telescope.load_extension("ui-select")
+      telescope.load_extension("live_grep_args")
     end,
+  },
+  {
+    "LunarVim/bigfile.nvim",
   },
 }
