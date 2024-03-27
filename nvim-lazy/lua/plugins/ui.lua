@@ -92,6 +92,7 @@ return {
   -- statusline
   {
     "nvim-lualine/lualine.nvim",
+    optional = true,
     event = "VeryLazy",
     opts = {
       options = {
@@ -121,6 +122,37 @@ return {
             cond = require("lazy.status").has_updates,
             color = { fg = "#ff9e64" },
           },
+          {
+            function()
+              local icon = require("lazyvim.config").icons.kinds.Copilot
+              local status = require("copilot.api").status.data
+              return icon .. (status.message or "")
+            end,
+            cond = function()
+              if not package.loaded["copilot"] then
+                return
+              end
+              local ok, clients = pcall(require("lazyvim.util").lsp.get_clients, { name = "copilot", bufnr = 0 })
+              if not ok then
+                return false
+              end
+              return ok and #clients > 0
+            end,
+            color = function()
+              if not package.loaded["copilot"] then
+                return
+              end
+              local Util = require("lazyvim.util")
+              local colors = {
+                [""] = Util.ui.fg("Special"),
+                ["Normal"] = Util.ui.fg("Special"),
+                ["Warning"] = Util.ui.fg("DiagnosticError"),
+                ["InProgress"] = Util.ui.fg("DiagnosticWarn"),
+              }
+              local status = require("copilot.api").status.data
+              return colors[status.status] or colors[""]
+            end,
+          },
         },
         lualine_y = { "progress" },
         lualine_z = { "location" },
@@ -140,7 +172,6 @@ return {
         lualine_z = {},
       },
       tabline = {},
-      extensions = { "fugitive" },
     },
   },
 

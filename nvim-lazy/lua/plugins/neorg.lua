@@ -2,7 +2,9 @@ return {
   {
     "nvim-neorg/neorg",
     lazy = true,
-    run = ":Neorg sync-parsers", -- This is the important bit!
+    dependencies = {
+      "vhyrro/luarocks.nvim",
+    },
     config = function()
       require("neorg").setup({
         load = {

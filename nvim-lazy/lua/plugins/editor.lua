@@ -54,6 +54,7 @@ return {
       "ThePrimeagen/git-worktree.nvim",
       "nvim-telescope/telescope-ui-select.nvim",
       "nvim-telescope/telescope-live-grep-args.nvim",
+      "ruslan-korneev/youtrack.nvim",
     },
     keys = {
       {
@@ -187,6 +188,13 @@ return {
         end,
         desc = "Live grep with args",
       },
+      {
+        ";y",
+        function()
+          local telescope = require("telescope")
+          telescope.extensions.youtrack.youtrack({ insert_mode = true })
+        end,
+      },
     },
     config = function(_, opts)
       local telescope = require("telescope")
@@ -241,6 +249,11 @@ return {
             },
           },
         },
+        youtrack = {
+          url = "https://tritran.youtrack.cloud",
+          token = "perm:YWRtaW4=.NDgtMw==.aKtoLe5Mu5eIZrIIlKH9ttjNBnyVZH",
+          query = "for: me #Unresolved",
+        },
       }
       telescope.setup(opts)
       telescope.load_extension("fzf")
@@ -248,9 +261,7 @@ return {
       telescope.load_extension("git_worktree")
       telescope.load_extension("ui-select")
       telescope.load_extension("live_grep_args")
+      telescope.load_extension("youtrack")
     end,
-  },
-  {
-    "LunarVim/bigfile.nvim",
   },
 }
