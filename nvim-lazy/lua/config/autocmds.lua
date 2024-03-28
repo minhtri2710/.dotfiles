@@ -12,3 +12,11 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt.conceallevel = 0
   end,
 })
+
+-- Disable autoformat
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = "*.phtml",
+  callback = function()
+    vim.b.autoformat = false
+  end,
+})

@@ -92,24 +92,28 @@ return {
   -- statusline
   {
     "nvim-lualine/lualine.nvim",
-    optional = true,
     event = "VeryLazy",
-    opts = {
-      options = {
-        theme = "tokyonight",
-        section_separators = { left = "", right = "" },
-      },
-      sections = {
-        lualine_a = { "mode" },
-        lualine_b = { "branch" },
+    opts = function(_, opts)
+      local icons = require("lazyvim.config").icons
+
+      opts.sections = {
+        lualine_a = {
+          "mode",
+        },
+        lualine_b = {
+          "branch",
+        },
         lualine_c = {
-          {
-            "filename",
-            file_status = true, -- displays file status (readonly status, modified status)
-            path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
-          },
+          LazyVim.lualine.root_dir(),
+          { LazyVim.lualine.pretty_path() },
         },
         lualine_x = {
+          -- stylua: ignore
+          {
+            function() return require("noice").api.status.command.get() end,
+            cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
+            color = LazyVim.ui.fg("Statement"),
+          },
           {
             "diagnostics",
             sources = { "nvim_diagnostic" },
@@ -117,62 +121,74 @@ return {
           "encoding",
           "fileformat",
           "filetype",
+          -- stylua: ignore
+          {
+            function() return require("noice").api.status.mode.get() end,
+            cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
+            color = LazyVim.ui.fg("Constant"),
+          },
+          -- stylua: ignore
+          {
+            function() return "  " .. require("dap").status() end,
+            cond = function () return package.loaded["dap"] and require("dap").status() ~= "" end,
+            color = LazyVim.ui.fg("Debug"),
+          },
           {
             require("lazy.status").updates,
             cond = require("lazy.status").has_updates,
-            color = { fg = "#ff9e64" },
+            color = LazyVim.ui.fg("Special"),
           },
           {
-            function()
-              local icon = require("lazyvim.config").icons.kinds.Copilot
-              local status = require("copilot.api").status.data
-              return icon .. (status.message or "")
-            end,
-            cond = function()
-              if not package.loaded["copilot"] then
-                return
+            "diff",
+            symbols = {
+              added = icons.git.added,
+              modified = icons.git.modified,
+              removed = icons.git.removed,
+            },
+            source = function()
+              local gitsigns = vim.b.gitsigns_status_dict
+              if gitsigns then
+                return {
+                  added = gitsigns.added,
+                  modified = gitsigns.changed,
+                  removed = gitsigns.removed,
+                }
               end
-              local ok, clients = pcall(require("lazyvim.util").lsp.get_clients, { name = "copilot", bufnr = 0 })
-              if not ok then
-                return false
-              end
-              return ok and #clients > 0
-            end,
-            color = function()
-              if not package.loaded["copilot"] then
-                return
-              end
-              local Util = require("lazyvim.util")
-              local colors = {
-                [""] = Util.ui.fg("Special"),
-                ["Normal"] = Util.ui.fg("Special"),
-                ["Warning"] = Util.ui.fg("DiagnosticError"),
-                ["InProgress"] = Util.ui.fg("DiagnosticWarn"),
-              }
-              local status = require("copilot.api").status.data
-              return colors[status.status] or colors[""]
             end,
           },
         },
-        lualine_y = { "progress" },
-        lualine_z = { "location" },
-      },
-      inactive_sections = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_c = {
-          {
-            "filename",
-            file_status = true, -- displays file status (readonly status, modified status)
-            path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
-          },
+        lualine_y = {
+          "progress",
         },
-        lualine_x = { "location" },
-        lualine_y = {},
-        lualine_z = {},
-      },
-      tabline = {},
-    },
+        lualine_z = {
+          "location",
+        },
+      }
+
+      table.insert(opts.sections.lualine_c, {
+        "aerial",
+        sep = " ", -- separator between symbols
+        sep_icon = "", -- separator between icon and symbol
+
+        -- The number of symbols to render top-down. In order to render only 'N' last
+        -- symbols, negative numbers may be supplied. For instance, 'depth = -1' can
+        -- be used in order to render only current symbol.
+        depth = 5,
+
+        -- When 'dense' mode is on, icons are not rendered near their symbols. Only
+        -- a single icon that represents the kind of current symbol is rendered at
+        -- the beginning of status line.
+        dense = false,
+
+        -- The separator to be used to separate symbols in dense mode.
+        dense_sep = ".",
+
+        -- Color the symbol icons.
+        colored = true,
+      })
+
+      table.insert(opts.sections.lualine_x, 10, LazyVim.lualine.cmp_source("cmp_tabnine", icons.kinds.TabNine))
+    end,
   },
 
   -- filename
