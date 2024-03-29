@@ -94,100 +94,12 @@ return {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
     opts = function(_, opts)
-      local icons = require("lazyvim.config").icons
-
-      opts.sections = {
-        lualine_a = {
-          "mode",
-        },
-        lualine_b = {
-          "branch",
-        },
-        lualine_c = {
-          LazyVim.lualine.root_dir(),
-          { LazyVim.lualine.pretty_path() },
-        },
-        lualine_x = {
-          -- stylua: ignore
-          {
-            function() return require("noice").api.status.command.get() end,
-            cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
-            color = LazyVim.ui.fg("Statement"),
-          },
-          {
-            "diagnostics",
-            sources = { "nvim_diagnostic" },
-          },
-          "encoding",
-          "fileformat",
-          "filetype",
-          -- stylua: ignore
-          {
-            function() return require("noice").api.status.mode.get() end,
-            cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
-            color = LazyVim.ui.fg("Constant"),
-          },
-          -- stylua: ignore
-          {
-            function() return "  " .. require("dap").status() end,
-            cond = function () return package.loaded["dap"] and require("dap").status() ~= "" end,
-            color = LazyVim.ui.fg("Debug"),
-          },
-          {
-            require("lazy.status").updates,
-            cond = require("lazy.status").has_updates,
-            color = LazyVim.ui.fg("Special"),
-          },
-          {
-            "diff",
-            symbols = {
-              added = icons.git.added,
-              modified = icons.git.modified,
-              removed = icons.git.removed,
-            },
-            source = function()
-              local gitsigns = vim.b.gitsigns_status_dict
-              if gitsigns then
-                return {
-                  added = gitsigns.added,
-                  modified = gitsigns.changed,
-                  removed = gitsigns.removed,
-                }
-              end
-            end,
-          },
-        },
-        lualine_y = {
-          "progress",
-        },
-        lualine_z = {
-          "location",
-        },
+      opts.sections.lualine_y = {
+        "progress",
       }
-
-      table.insert(opts.sections.lualine_c, {
-        "aerial",
-        sep = " ", -- separator between symbols
-        sep_icon = "", -- separator between icon and symbol
-
-        -- The number of symbols to render top-down. In order to render only 'N' last
-        -- symbols, negative numbers may be supplied. For instance, 'depth = -1' can
-        -- be used in order to render only current symbol.
-        depth = 5,
-
-        -- When 'dense' mode is on, icons are not rendered near their symbols. Only
-        -- a single icon that represents the kind of current symbol is rendered at
-        -- the beginning of status line.
-        dense = false,
-
-        -- The separator to be used to separate symbols in dense mode.
-        dense_sep = ".",
-
-        -- Color the symbol icons.
-        colored = true,
-      })
-
-      table.insert(opts.sections.lualine_x, 10, LazyVim.lualine.cmp_source("cmp_tabnine", icons.kinds.TabNine))
+      opts.sections.lualine_z = {
+        "location",
+      }
     end,
   },
 
@@ -207,9 +119,6 @@ return {
           },
         },
         window = { margin = { vertical = 0, horizontal = 1 } },
-        hide = {
-          cursorline = true,
-        },
         render = function(props)
           local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
           if vim.bo[props.buf].modified then
@@ -226,13 +135,6 @@ return {
   {
     "folke/zen-mode.nvim",
     cmd = "ZenMode",
-    opts = {
-      plugins = {
-        gitsigns = true,
-        tmux = true,
-        kitty = { enabled = false, font = "+2" },
-      },
-    },
     keys = { { "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" } },
   },
 

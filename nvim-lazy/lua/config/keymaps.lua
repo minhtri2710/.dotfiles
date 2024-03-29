@@ -54,7 +54,7 @@ keymap.set("n", "N", "Nzzzv")
 keymap.set("n", "J", "mzJ`z")
 
 keymap.set("n", "<leader>r", function()
-  require("beowulf.utils").replaceHexWithHSL()
+  require("beowulf.hsl").replaceHexWithHSL()
 end)
 
 -- greatest remap ever
