@@ -1,0 +1,27 @@
+live_config_reload = true
+
+import = ["~/.config/alacritty/themes/themes/cyber_punk_neon.toml"]
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+dynamic_padding = true
+opacity = 0.8
+blur = true
+startup_mode = "Maximized"
+option_as_alt = "Both"
+decorations = 'Buttonless'
+
+[font]
+size = 14
+normal = { family = "IntoneMono Nerd Font" }
+bold = { family = "IntoneMono Nerd Font" }
+bold_italic = { family = "IntoneMono Nerd Font" }
+italic = { family = "IntoneMono Nerd Font" }
+
+[keyboard]
+bindings = [
+  { key = "Tab", mods = "Control", action = "SelectNextTab" },
+  { key = "Tab", mods = "Control|Shift", action = "SelectPreviousTab" },
+]
