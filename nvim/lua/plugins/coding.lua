@@ -44,4 +44,24 @@ return {
       table.insert(opts.sources, { name = "emoji" })
     end,
   },
+
+  -- Better increase/descrease
+  {
+    "monaqa/dial.nvim",
+    -- stylua: ignore
+    keys = {
+      { "<C-a>", function() return require("dial.map").inc_normal() end, expr = true, desc = "Increment" },
+      { "<C-x>", function() return require("dial.map").dec_normal() end, expr = true, desc = "Decrement" },
+    },
+  },
+
+  {
+    "tris203/precognition.nvim",
+  },
+
+  {
+    "m4xshen/hardtime.nvim",
+    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+    opts = {},
+  },
 }
