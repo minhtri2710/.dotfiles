@@ -2,6 +2,7 @@
   excludesfile = ~/.gitignore
   editor = nvim
   ignorecase = false
+  pager = delta
 [push]
   default = simple
 [color]
@@ -41,6 +42,7 @@
   user = minhtri2710
 [diff]
   tool = nvimdiff
+  colorMoved = default
 [difftool "nvimdiff"]
 	cmd = nvim -d \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -57,3 +59,10 @@
 [user]
 	email = inpro2710@gmail.com
 	name = Tri.Tran
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true
+  side-by-side = true
+[merge]
+  conflictstyle = diff3
