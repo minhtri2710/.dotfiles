@@ -26,15 +26,21 @@ vim.opt.tabstop = 2
 vim.opt.wrap = false -- No Wrap lines
 vim.opt.backspace = { "start", "eol", "indent" }
 vim.opt.path:append({ "**" }) -- Finding files - Search down into subfolders
-vim.opt.wildignore:append({ "*/node_modules/*", "*.min.*" })
+vim.opt.wildignore:append({ "*/node_modules/*" })
 vim.opt.splitbelow = true -- Put new windows below current
 vim.opt.splitright = true -- Put new windows right of current
 vim.opt.splitkeep = "cursor"
 vim.opt.mouse = ""
-vim.opt.listchars = { space = "•", eol = "↵" }
+vim.opt.listchars:append({ space = "•", eol = "↵" })
 
 if (vim.fn.has("win32")) == 1 then
   vim.opt.shell = "pwsh"
+  vim.opt.shellcmdflag =
+    "-NoLogo -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new();$PSDefaultParameterValues[''Out-File:Encoding'']=''utf8'';Remove-Alias -Force -ErrorAction SilentlyContinue tee;"
+  vim.opt.shellredir = '2>&1 | %%{ "$_" } | Out-File %s; exit $LastExitCode'
+  vim.opt.shellpipe = '2>&1 | %%{ "$_" } | tee %s; exit $LastExitCode'
+  vim.opt.shellquote = ""
+  vim.opt.shellxquote = ""
 end
 
 -- Undercurl
