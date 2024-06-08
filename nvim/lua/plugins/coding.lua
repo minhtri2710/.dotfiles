@@ -1,26 +1,4 @@
 return {
-  -- Create annotations with one keybind, and jump your cursor in the inserted annotation
-  {
-    "danymat/neogen",
-    keys = {
-      {
-        "<leader>cc",
-        function()
-          require("neogen").generate({})
-        end,
-        desc = "Neogen Comment",
-      },
-    },
-    opts = { snippet_engine = "luasnip" },
-  },
-
-  -- Incremental rename
-  {
-    "smjonas/inc-rename.nvim",
-    cmd = "IncRename",
-    config = true,
-  },
-
   -- Go forward/backward with square brackets
   {
     "echasnovski/mini.bracketed",
@@ -43,16 +21,6 @@ return {
     opts = function(_, opts)
       table.insert(opts.sources, { name = "emoji" })
     end,
-  },
-
-  -- Better increase/descrease
-  {
-    "monaqa/dial.nvim",
-    -- stylua: ignore
-    keys = {
-      { "<C-a>", function() return require("dial.map").inc_normal() end, expr = true, desc = "Increment" },
-      { "<C-x>", function() return require("dial.map").dec_normal() end, expr = true, desc = "Decrement" },
-    },
   },
 
   {
