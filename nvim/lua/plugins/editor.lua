@@ -71,8 +71,7 @@ return {
       {
         ";f",
         function()
-          local builtin = require("telescope.builtin")
-          builtin.find_files({
+          require("telescope.builtin").find_files({
             no_ignore = false,
             hidden = true,
             previewer = false,
@@ -83,8 +82,7 @@ return {
       {
         ";r",
         function()
-          local builtin = require("telescope.builtin")
-          builtin.live_grep({
+          require("telescope.builtin").live_grep({
             additional_args = { "--hidden" },
           })
         end,
@@ -93,69 +91,60 @@ return {
       {
         "\\\\",
         function()
-          local builtin = require("telescope.builtin")
-          builtin.buffers()
+          require("telescope.builtin").buffers()
         end,
         desc = "Lists open buffers",
       },
       {
         ";h",
         function()
-          local builtin = require("telescope.builtin")
-          builtin.help_tags()
+          require("telescope.builtin").help_tags()
         end,
         desc = "Lists available help tags and opens a new window with the relevant help info on <cr>",
       },
       {
         ";;",
         function()
-          local builtin = require("telescope.builtin")
-          builtin.resume()
+          require("telescope.builtin").resume()
         end,
         desc = "Resume the previous telescope picker",
       },
       {
         ";e",
         function()
-          local builtin = require("telescope.builtin")
-          builtin.diagnostics()
+          require("telescope.builtin").diagnostics()
         end,
         desc = "Lists Diagnostics for all open buffers or a specific buffer",
       },
       {
         ";t",
         function()
-          local builtin = require("telescope.builtin")
-          builtin.treesitter()
+          require("telescope.builtin").treesitter()
         end,
         desc = "Lists Function names, variables, from Treesitter",
       },
       {
         ";g",
         function()
-          local builtin = require("telescope.builtin")
-          builtin.git_files()
+          require("telescope.builtin").git_files()
         end,
         desc = "Lists git files",
       },
       {
         ";s",
         function()
-          local builtin = require("telescope.builtin")
-          builtin.grep_string({ search = vim.fn.input("Grep > ") })
+          require("telescope.builtin").grep_string({ search = vim.fn.input("Grep > ") })
         end,
         desc = "Grep string",
       },
       {
         "sf",
         function()
-          local telescope = require("telescope")
-
           local function telescope_buffer_dir()
             return vim.fn.expand("%:p:h")
           end
 
-          telescope.extensions.file_browser.file_browser({
+          require("telescope").extensions.file_browser.file_browser({
             path = "%:p:h",
             cwd = telescope_buffer_dir(),
             respect_gitignore = false,
@@ -171,25 +160,21 @@ return {
       {
         "<leader>gw",
         function()
-          local telescope = require("telescope")
-
-          telescope.extensions.git_worktree.git_worktrees()
+          require("telescope").extensions.git_worktree.git_worktrees()
         end,
         desc = "List git worktree",
       },
       {
         ";b",
         function()
-          local builtin = require("telescope.builtin")
-          builtin.git_branches()
+          require("telescope.builtin").git_branches()
         end,
         desc = "List git branches",
       },
       {
         "<leader>fg",
         function()
-          local telescope = require("telescope")
-          telescope.extensions.live_grep_args.live_grep_args()
+          require("telescope").extensions.live_grep_args.live_grep_args()
         end,
         desc = "Live grep with args",
       },
@@ -214,8 +199,18 @@ return {
             preview_cutoff = 9999,
           },
         },
+        buffers = {
+          mappings = {
+            n = {
+              ["d"] = actions.delete_buffer,
+            },
+          },
+        },
       }
       opts.extensions = {
+        ["ui-select"] = {
+          require("telescope.themes").get_dropdown({}),
+        },
         file_browser = {
           theme = "dropdown",
           -- disables netrw and use telescope-file-browser in its place

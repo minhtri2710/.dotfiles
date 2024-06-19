@@ -56,3 +56,5 @@ vim.cmd([[au BufNewFile,BufRead Podfile setf ruby]])
 vim.g.markdown_fenced_languages = {
   "ts=typescript",
 }
+
+vim.g.lazyvim_php_lsp = "intelephense"
