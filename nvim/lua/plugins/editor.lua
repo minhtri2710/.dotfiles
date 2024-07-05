@@ -248,4 +248,17 @@ return {
       telescope.load_extension("live_grep_args")
     end,
   },
+  {
+    "preservim/vim-pencil",
+  },
+  {
+    "MeanderingProgrammer/markdown.nvim",
+    name = "render-markdown",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("render-markdown").setup({})
+    end,
+  },
 }
