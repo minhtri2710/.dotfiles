@@ -74,8 +74,3 @@ keymap.set("x", "<leader>p", [["_dP]])
 -- next greatest remap ever : asbjornHaland
 keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 keymap.set("n", "<leader>Y", [["+Y]])
-
--- Diagnostics
-keymap.set("n", "<C-j>", function()
-  vim.diagnostic.goto_next()
-end, opts)
