@@ -150,4 +150,9 @@ return {
       opts.config.header = vim.split(logo, "\n")
     end,
   },
+  {
+    "scottmckendry/cyberdream.nvim",
+    lazy = false,
+    priority = 1000,
+  },
 }

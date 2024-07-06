@@ -20,6 +20,7 @@ return {
         hsl_color = {
           pattern = "hsl%(%d+,? %d+%%?,? %d+%%?%)",
           group = function(_, match)
+            local MiniHipatterns = require("mini.hipatterns")
             local utils = require("solarized-osaka.hsl")
             --- @type string, string, string
             local nh, ns, nl = match:match("hsl%((%d+),? (%d+)%%?,? (%d+)%%?%)")
@@ -250,15 +251,5 @@ return {
   },
   {
     "preservim/vim-pencil",
-  },
-  {
-    "MeanderingProgrammer/markdown.nvim",
-    name = "render-markdown",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-    },
-    config = function()
-      require("render-markdown").setup({})
-    end,
   },
 }
