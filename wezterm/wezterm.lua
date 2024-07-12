@@ -7,24 +7,22 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.default_prog = { "pwsh" }
-
 config.color_scheme = "Tokyo Night"
 config.font = wezterm.font_with_fallback({
 	{ family = "JetBrainsMono Nerd Font", weight = "Bold" },
 })
-config.font_size = 11
+config.font_size = 15.5
 config.window_background_opacity = 0.9
+config.macos_window_background_blur = 10
 config.window_background_gradient = {
 	orientation = "Vertical",
 	colors = {
-		"#260e36",
 		"#1b0729",
 		"#31043d",
 	},
 }
 config.window_decorations = "RESIZE"
-config.window_close_confirmation = "AlwaysPrompt"
+config.window_close_confirmation = "NeverPrompt"
 config.scrollback_lines = 3000
 config.default_workspace = "main"
 
@@ -89,10 +87,6 @@ config.keys = {
 
 	-- Lastly, workspace
 	{ key = "w", mods = "LEADER", action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
-
-	-- Copy/Paste
-	{ key = "v", mods = "CTRL", action = act.PasteFrom("Clipboard") },
-	{ key = "v", mods = "CTRL", action = act.PasteFrom("PrimarySelection") },
 }
 
 -- I can use the tab navigator (LDR t), but I also want to quickly navigate tabs with index
@@ -200,5 +194,12 @@ wezterm.on("gui-startup", function()
 	local tab, pane, window = mux.spawn_window({})
 	window:gui_window():maximize()
 end)
+
+if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+	config.default_prog = { "pwsh" }
+	config.font_size = 11
+	table.insert(config.keys, { key = "v", mods = "CTRL", action = act.PasteFrom("Clipboard") })
+	table.insert(config.keys, { key = "v", mods = "CTRL", action = act.PasteFrom("PrimarySelection") })
+end
 
 return config
