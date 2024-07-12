@@ -7,12 +7,22 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
+config.default_prog = { "pwsh" }
+
 config.color_scheme = "Tokyo Night"
 config.font = wezterm.font_with_fallback({
-	{ family = "JetBrainsMono Nerd Font" },
+	{ family = "JetBrainsMono Nerd Font", weight = "Bold" },
 })
-config.font_size = 15
+config.font_size = 11
 config.window_background_opacity = 0.9
+config.window_background_gradient = {
+	orientation = "Vertical",
+	colors = {
+		"#260e36",
+		"#1b0729",
+		"#31043d",
+	},
+}
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "AlwaysPrompt"
 config.scrollback_lines = 3000
@@ -79,7 +89,12 @@ config.keys = {
 
 	-- Lastly, workspace
 	{ key = "w", mods = "LEADER", action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
+
+	-- Copy/Paste
+	{ key = "v", mods = "CTRL", action = act.PasteFrom("Clipboard") },
+	{ key = "v", mods = "CTRL", action = act.PasteFrom("PrimarySelection") },
 }
+
 -- I can use the tab navigator (LDR t), but I also want to quickly navigate tabs with index
 for i = 1, 9 do
 	table.insert(config.keys, {
@@ -128,7 +143,6 @@ wezterm.on("update-status", function(window, pane)
 	end
 
 	local basename = function(s)
-		-- Nothing a little regex can't fix
 		return string.gsub(s, "(.*[/\\])(.*)", "%2")
 	end
 
@@ -136,10 +150,8 @@ wezterm.on("update-status", function(window, pane)
 	local cwd = pane:get_current_working_dir()
 	if cwd then
 		if type(cwd) == "userdata" then
-			-- Wezterm introduced the URL object in 20240127-113634-bbcac864
 			cwd = basename(cwd.file_path)
 		else
-			-- 20230712-072601-f4abf8fd or earlier version
 			cwd = basename(cwd)
 		end
 	else
@@ -151,8 +163,8 @@ wezterm.on("update-status", function(window, pane)
 	-- CWD and CMD could be nil (e.g. viewing log using Ctrl-Alt-l)
 	cmd = cmd and basename(cmd) or ""
 
-	-- Time
-	local time = wezterm.strftime("%H:%M")
+	-- Datetime
+	local datetime = wezterm.strftime("%d-%m-%Y %H:%M")
 
 	-- Left status (left of the tab line)
 	window:set_left_status(wezterm.format({
@@ -164,15 +176,13 @@ wezterm.on("update-status", function(window, pane)
 
 	-- Right status
 	window:set_right_status(wezterm.format({
-		-- Wezterm has a built-in nerd fonts
-		-- https://wezfurlong.org/wezterm/config/lua/wezterm/nerdfonts.html
 		{ Text = wezterm.nerdfonts.md_folder .. "  " .. cwd },
 		{ Text = " | " },
 		{ Foreground = { Color = "#e0af68" } },
 		{ Text = wezterm.nerdfonts.fa_code .. "  " .. cmd },
 		"ResetAttributes",
 		{ Text = " | " },
-		{ Text = wezterm.nerdfonts.md_clock .. "  " .. time },
+		{ Text = wezterm.nerdfonts.fa_clock_o .. "  " .. datetime },
 		{ Text = "  " },
 	}))
 end)
@@ -183,5 +193,12 @@ config.window_padding = {
 	top = 0,
 	bottom = 0,
 }
+
+local mux = wezterm.mux
+
+wezterm.on("gui-startup", function()
+	local tab, pane, window = mux.spawn_window({})
+	window:gui_window():maximize()
+end)
 
 return config
