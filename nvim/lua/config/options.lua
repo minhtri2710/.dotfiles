@@ -40,6 +40,7 @@ if (vim.fn.has("win32")) == 1 then
   vim.opt.shellpipe = '2>&1 | %%{ "$_" } | tee %s; exit $LastExitCode'
   vim.opt.shellquote = ""
   vim.opt.shellxquote = ""
+  vim.g.lazyvim_php_lsp = "intelephense"
 end
 
 -- Undercurl
@@ -55,5 +56,3 @@ vim.cmd([[au BufNewFile,BufRead Podfile setf ruby]])
 vim.g.markdown_fenced_languages = {
   "ts=typescript",
 }
-
-vim.g.lazyvim_php_lsp = "intelephense"
