@@ -168,12 +168,26 @@ return {
 	},
 
 	{
-		"stevearc/conform.nvim",
-		optional = true,
-		opts = {
-			formatters = {
-				php_cs_fixer = {
-					prepend_args = { "--config=/Users/beowulf/.config/nvim/.php-cs-fixer.php" },
+		{
+			"stevearc/conform.nvim",
+			optional = true,
+			opts = {
+				default_format_opts = {
+					timeout_ms = 10000,
+				},
+				formatters = {
+					php_cs_fixer = {
+						env = {
+							PHP_CS_FIXER_IGNORE_ENV = 1,
+						},
+						prepend_args = function()
+							if vim.fn.has("win32") == 1 then
+								return { "--config=C:/Users/tri.tran/AppData/Local/nvim/.php-cs-fixer.php" }
+							end
+
+							return { "--config=/Users/beowulf/.config/nvim/.php-cs-fixer.php" }
+						end,
+					},
 				},
 			},
 		},
