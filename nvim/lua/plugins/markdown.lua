@@ -4,7 +4,7 @@ return {
 		opts = {
 			acknowledge_conflicts = true,
 			latex = {
-				enabled = false,
+				enabled = true,
 			},
 		},
 	},
