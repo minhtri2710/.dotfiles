@@ -158,7 +158,7 @@ return {
 					args = {
 						"-q",
 						"--standard=PSR12",
-						"--exclude=Generic.WhiteSpace.DisallowTabIndent",
+						"--exclude=Generic.WhiteSpace.DisallowTabIndent,Squiz.Functions.MultiLineFunctionDeclaration,PSR2.Classes.ClassDeclaration",
 						"--report=json",
 						"-",
 					},

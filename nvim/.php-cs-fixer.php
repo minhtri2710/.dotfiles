@@ -36,6 +36,14 @@ return (new Config())
 			'keep_multiple_spaces_after_comma' => false,
 			'attribute_placement' => 'same_line',
 		],
+		'curly_braces_position' => [
+			'classes_opening_brace' => 'same_line',
+			'functions_opening_brace' => 'same_line',
+			'allow_single_line_empty_anonymous_classes' => true,
+		],
+		'cast_spaces' => [
+			'space' => 'none',
+		],
 	])
 	->setIndent("\t")
 	->setFinder($finder);
