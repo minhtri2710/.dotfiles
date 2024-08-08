@@ -12,7 +12,7 @@ config.font = wezterm.font_with_fallback({
 	{ family = "JetBrainsMono Nerd Font", weight = "Bold" },
 })
 config.font_size = 15.5
-config.window_background_opacity = 0.9
+config.window_background_opacity = 0.8
 config.macos_window_background_blur = 10
 config.window_background_gradient = {
 	orientation = "Vertical",
@@ -201,5 +201,18 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 	table.insert(config.keys, { key = "v", mods = "CTRL", action = act.PasteFrom("Clipboard") })
 	table.insert(config.keys, { key = "v", mods = "CTRL", action = act.PasteFrom("PrimarySelection") })
 end
+
+wezterm.on("window-resized", function(window, pane)
+	local window_dims = window:get_dimensions()
+	local overrides = window:get_config_overrides() or {}
+
+	if window_dims.is_full_screen then
+		overrides.font_size = 15.7
+	else
+		overrides.font_size = 15.5
+	end
+
+	window:set_config_overrides(overrides)
+end)
 
 return config
